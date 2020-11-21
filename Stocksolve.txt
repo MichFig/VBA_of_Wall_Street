@@ -18,7 +18,6 @@ Dim ticker_volume As Double
 Dim lastrow As Long
 Dim opening_price As Double
 Dim closing_price As Double
-Dim yearly_change As Double
 Dim percent_change As Double
 Dim total_stock_volume As Double
 Dim greatest_percent_increase As Double
@@ -57,11 +56,12 @@ Range("Q1").Select
  ' Set an initial variable for holding the brand name
   Dim Brand_Name As String
 
-  ' Set an initial variable for holding the total per credit card brand
-  Dim Brand_Total As Double
-  Brand_Total = 0
+  ' Set an initial variable for holding the total per brand
+  Dim yearly_change As Double
+  yearly_change = 0
 
-  ' Keep track of the location for each credit card brand in the summary table
+  ' Keep track of the location for each brand in the summary table
+  
   Dim Summary_Table_Row As Integer
   Summary_Table_Row = 2
 
@@ -77,7 +77,7 @@ Range("Q1").Select
       ' Add to the Brand Total
       Brand_Total = Brand_Total + Cells(i, 7).Value
 
-      ' Print the Credit Card Brand in the Summary Table
+      ' Print the Brand in the Summary Table
       Range("I" & Summary_Table_Row).Value = Brand_Name
 
       ' Print the Brand Amount to the Summary Table
@@ -99,6 +99,9 @@ Range("Q1").Select
     
 Next i
 
-Cells(i, 10).Value = [Cells(i, 6).Value * Cells(i, 3).Value]
+
+
+
 
 End Sub
+
